@@ -1,0 +1,16 @@
+{
+  "name": "solidity-threshold-treasury",
+  "title": "Threshold native treasury",
+  "contract": "ThresholdTreasury",
+  "description": "Immutable-owner multisig treasury with transaction approvals, revocation, delay and exactly-once execution.",
+  "args": [
+    [
+      "$ADMIN",
+      "$SIGNER1",
+      "$SIGNER2"
+    ],
+    2,
+    10
+  ],
+  "assumptions": "Signer set and threshold are immutable. Delay starts at submission, not when quorum is reached. Calls can execute arbitrary target code after quorum; target failures revert execution and keep the transaction retryable. No signer rotation or signature-based approvals."
+}
